@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     kotlin("android")
+    id("kotlin-android")
 }
 
 android {
@@ -8,7 +9,7 @@ android {
     buildToolsVersion("30.0.3")
 
     defaultConfig {
-        applicationId("com.mlkit.barcode")
+        applicationId("com.mlkit")
         minSdkVersion(24)
         targetSdkVersion(30)
         versionCode(1)
@@ -67,4 +68,6 @@ dependencies {
     // Google ML Kit
     // Barcode
     implementation("com.google.mlkit:barcode-scanning:16.1.0")
+    //Recognize text in images with ML Kit
+    implementation( "com.google.android.gms:play-services-mlkit-text-recognition:16.1.2")
 }

@@ -1,4 +1,4 @@
-package com.mlkit.barcode.ui
+package com.mlkit.ui
 
 import android.Manifest
 import android.annotation.SuppressLint

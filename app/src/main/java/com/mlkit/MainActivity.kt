@@ -1,12 +1,12 @@
-package com.mlkit.barcode
+package com.mlkit
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.mlkit.ui.BarcodeActivity
+import com.mlkit.ui.TextRecognizerActivity
 import com.mlkit.barcode.databinding.ActivityMainBinding
-import com.mlkit.barcode.ui.BarcodeActivity
-
 
 class MainActivity : AppCompatActivity() {
     private var _binding: ActivityMainBinding? = null
@@ -28,6 +28,11 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, message,Toast.LENGTH_LONG).show()
             }
         }
+        if (requestCode == REQUEST_CODE_TEXT){
+            if (resultCode == RESULT_OK){
+                binding.tvResult.text = data?.getStringExtra("TEXT")
+            }
+        }
     }
 
     private fun hookViews() {
@@ -37,11 +42,16 @@ class MainActivity : AppCompatActivity() {
                 REQUEST_CODE
             )
         }
+
+        binding.mbtnTextReco.setOnClickListener {
+            startActivityForResult(Intent(this, TextRecognizerActivity::class.java), REQUEST_CODE_TEXT)
+        }
     }
 
 
     companion object{
         const val REQUEST_CODE = 101;
+        const val REQUEST_CODE_TEXT = 102;
     }
 
 

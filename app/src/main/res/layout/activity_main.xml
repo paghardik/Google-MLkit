@@ -8,12 +8,26 @@
     android:paddingEnd="16dp"
     android:paddingTop="8dp"
     android:paddingBottom="8dp"
-    tools:context="com.mlkit.barcode.MainActivity">
+    android:orientation="vertical"
+    tools:context="com.mlkit.barcode.as.gg.MainActivity">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/mbtnBarcode"
         android:text="Barcode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mbtnTextReco"
+        android:text="Text Recognizer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="match_parent"
+        android:textColor="@color/black"
+        android:text="Data"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
